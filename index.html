@@ -6,39 +6,68 @@
   <title>Vídeos de Teste - Módulo do Javali</title>
   <style>
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 960px; margin: 30px auto; padding: 0 20px; background: #0d1117; color: #c9d1d9; }
-    h1 { border-bottom: 1px solid #30363d; padding-bottom: 12px; font-size: 1.6rem; }
+    h1 { border-bottom: 1px solid #30363d; padding-bottom: 12px; font-size: 1.6rem; color: #f0f6fc; }
     .player-container { background: #161b22; padding: 20px; border-radius: 8px; border: 1px solid #30363d; margin-bottom: 25px; }
-    #video-title { color: #58a6ff; margin-top: 0; font-size: 1.3rem; }
-    video { width: 100%; border-radius: 6px; background: #000; outline: none; margin-top: 10px; }
+    #video-title { color: #58a6ff; margin-top: 0; font-size: 1.25rem; }
+    video { width: 100%; border-radius: 6px; background: #000; outline: none; margin-top: 10px; max-height: 520px; }
     .selector-box { margin-bottom: 15px; }
     select { width: 100%; padding: 10px; background: #21262d; color: #c9d1d9; border: 1px solid #30363d; border-radius: 6px; font-size: 1rem; cursor: pointer; }
-    .video-list { list-style: none; padding: 0; margin: 20px 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
-    .video-item { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 12px; cursor: pointer; transition: 0.2s; }
-    .video-item:hover, .video-item.active { border-color: #58a6ff; background: #1f242c; }
-    .video-item a { color: #c9d1d9; text-decoration: none; display: block; font-weight: 500; font-size: 0.95rem; }
-    .video-item.active a { color: #58a6ff; }
+    .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; list-style: none; padding: 0; margin-top: 20px; }
+    .video-card { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 14px; cursor: pointer; transition: border-color 0.2s, background 0.2s; }
+    .video-card:hover, .video-card.active { border-color: #58a6ff; background: #1f242c; }
+    .video-card h4 { margin: 0; font-size: 0.95rem; color: #c9d1d9; font-weight: 500; }
+    .video-card.active h4 { color: #58a6ff; }
   </style>
 </head>
 <body>
   <h1>🐗 Testes do Módulo do Javali</h1>
-
   <div class="player-container">
     <div class="selector-box">
-      <label for="video-select" style="font-weight: 600; display: block; margin-bottom: 6px;">Selecione o ensaio/teste:</label>
-      <select id="video-select" onchange="trocarVideo(this.value)">
-      </select>
+      <label for="video-select" style="font-weight: 600; display: block; margin-bottom: 8px;">Selecione o ensaio para assistir:</label>
+      <select id="video-select" onchange="trocarVideo(this.value)"></select>
     </div>
     <h2 id="video-title">Carregando...</h2>
     <video id="main-player" controls preload="metadata"></video>
   </div>
-
-  <h2>Todos os Ensaios Disponíveis</h2>
-  <ul class="video-list" id="gallery-list"></ul>
-
+  <h2>Lista Completa de Ensaios</h2>
+  <ul class="video-grid" id="gallery-list"></ul>
   <script>
-    let videos = [];
-
-    videos = [
+    const videos = [
+      { id: '20251117_091722.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_091722.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E1_SA-ED_T01 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_092432.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_092432.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E1_SA-DE_T02 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_092916.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_092916.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E1_SA-ED_T03 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_093103.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_093103.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E1_SA-ED_T04 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_093119.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_093119.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E1_SA-ED_T05 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_093519.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_093519.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E1_SA-DE_T06 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_093829.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_093829.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E1_SA-ED_T07 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_094257.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_094257.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E1_SA-DE_T08 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_094551.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_094551.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E1_SA-ED_T09 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_094811.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_094811.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E1_SA-DE_T10 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_095035.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_095035.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E1_SA-ED_T11 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_095100.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_095100.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E1_SA-DE_T12 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_095330.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_095330.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E1_SA-ED_T13 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_102849.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_102849.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E1_CA-ED_T01 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_103206.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_103206.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E1_CA-DE_T02 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_103507.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_103507.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E1_CA-ED_T03 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_104013.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_104013.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E1_CA-DE_T04 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_104439.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_104439.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E1_CA-ED_T05 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_105014.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_105014.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E1_CA-DE_T06 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_105304.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_105304.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E1_CA-ED_T07 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_105923.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_105923.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E1_CA-DE_T08 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_110125.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_110125.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E1_CA-ED_T09 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_110406.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_110406.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E1_CA-DE_T10 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_113702.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_113702.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E4_T01 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_113715.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_113715.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E4_T02 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_114144.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_114144.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E4_T03 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_114419.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_114419.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E4_T04 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_115010.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_115010.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E4_T05 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_115334.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_115334.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E4_T06 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_115649.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_115649.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E4_T07 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_120032.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_120032.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E4_T08 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_120600.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_120600.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E4_T09 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_120923.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_120923.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E4_T10 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_121227.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_121227.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E4_T11 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
+      { id: '20251117_122154.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', file: '20251117_122154.mp4  vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//', title: ' NOVO-LAB_E4_T12 vert{} sed -e s/^[[:space:]]*// -e s/[[:space:]]*$//' },
     ];
 
     const select = document.getElementById('video-select');
@@ -46,46 +75,49 @@
     const player = document.getElementById('main-player');
     const title = document.getElementById('video-title');
 
-    videos.forEach((item, index) => {
-      // Preenche o Select
-      const opt = document.createElement('option');
-      opt.value = item.id;
-      opt.textContent = `${index + 1}. ${item.title}`;
-      select.appendChild(opt);
+    if(videos.length > 0) {
+        videos.forEach((item, index) => {
+          const opt = document.createElement('option');
+          opt.value = item.id;
+          opt.textContent = `${index + 1}. ${item.title}`;
+          select.appendChild(opt);
 
-      // Preenche a Lista de cartões
-      const li = document.createElement('li');
-      li.className = 'video-item';
-      li.id = 'card-' + item.id;
-      li.innerHTML = `<a href="#${item.id}" onclick="trocarVideo('${item.id}')">${index + 1}. ${item.title}</a>`;
-      list.appendChild(li);
-    });
+          const li = document.createElement('li');
+          li.className = 'video-card';
+          li.id = 'card-' + item.id;
+          li.onclick = () => trocarVideo(item.id);
+          li.innerHTML = `<h4>${index + 1}. ${item.title}</h4>`;
+          list.appendChild(li);
+        });
 
-    function trocarVideo(id) {
-      const item = videos.find(v => v.id === id) || videos[0];
-      if (!item) return;
+        function trocarVideo(id) {
+          const item = videos.find(v => v.id === id) || videos[0];
+          if (!item) return;
 
-      window.location.hash = item.id;
-      select.value = item.id;
-      title.textContent = item.title;
-      player.src = item.file;
-      player.load();
+          window.location.hash = item.id;
+          select.value = item.id;
+          title.textContent = item.title;
+          player.src = item.file;
+          player.load();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
 
-      document.querySelectorAll('.video-item').forEach(el => el.classList.remove('active'));
-      const activeCard = document.getElementById('card-' + item.id);
-      if (activeCard) activeCard.classList.add('active');
+          document.querySelectorAll('.video-card').forEach(el => el.classList.remove('active'));
+          const activeCard = document.getElementById('card-' + item.id);
+          if (activeCard) activeCard.classList.add('active');
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+          const initialId = window.location.hash.replace('#', '');
+          trocarVideo(initialId);
+        });
+
+        window.addEventListener('hashchange', () => {
+          const hashId = window.location.hash.replace('#', '');
+          trocarVideo(hashId);
+        });
+    } else {
+        title.textContent = "Erro: Nenhum vídeo foi carregado do legendas.txt.";
     }
-
-    // Carrega o vídeo solicitado pela URL (ou o primeiro da fila)
-    window.addEventListener('DOMContentLoaded', () => {
-      const initialId = window.location.hash.replace('#', '');
-      trocarVideo(initialId);
-    });
-
-    window.addEventListener('hashchange', () => {
-      const hashId = window.location.hash.replace('#', '');
-      trocarVideo(hashId);
-    });
   </script>
 </body>
 </html>
