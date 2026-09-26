@@ -6,14 +6,40 @@
 
 ---
 
-## 📌 Sobre o Repositório
-
-Repositório dedicado ao armazenamento e documentação das gravações de teste do **Módulo do Javali**.
-
-* **Site interativo com leitor:** [https://lucasaprc-jpg.github.io/projetos-videos-javali/](https://lucasaprc-jpg.github.io/projetos-videos-javali/)
-* **Gestão de multimédia:** Git LFS (*Large File Storage*)
-
----
-
 ## 📂 Arquivos de Vídeo Disponíveis
 
+- **NOVO-LAB_E1_SA-ED_T01** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_091722)
+- **NOVO-LAB_E1_SA-DE_T02** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_092432)
+- **NOVO-LAB_E1_SA-ED_T03** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_092916)
+- **NOVO-LAB_E1_SA-ED_T04** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_093103)
+- **NOVO-LAB_E1_SA-ED_T05** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_093119)
+- **NOVO-LAB_E1_SA-DE_T06** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_093519)
+- **NOVO-LAB_E1_SA-ED_T07** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_093829)
+- **NOVO-LAB_E1_SA-DE_T08** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_094257)
+- **NOVO-LAB_E1_SA-ED_T09** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_094551)
+- **NOVO-LAB_E1_SA-DE_T10** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_094811)
+- **NOVO-LAB_E1_SA-ED_T11** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_095035)
+- **NOVO-LAB_E1_SA-DE_T12** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_095100)
+- **NOVO-LAB_E1_SA-ED_T13** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_095330)
+- **NOVO-LAB_E1_CA-ED_T01** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_102849)
+- **NOVO-LAB_E1_CA-DE_T02** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_103206)
+- **NOVO-LAB_E1_CA-ED_T03** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_103507)
+- **NOVO-LAB_E1_CA-DE_T04** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_104013)
+- **NOVO-LAB_E1_CA-ED_T05** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_104439)
+- **NOVO-LAB_E1_CA-DE_T06** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_105014)
+- **NOVO-LAB_E1_CA-ED_T07** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_105304)
+- **NOVO-LAB_E1_CA-DE_T08** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_105923)
+- **NOVO-LAB_E1_CA-ED_T09** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_110125)
+- **NOVO-LAB_E1_CA-DE_T10** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_110406)
+- **NOVO-LAB_E4_T01** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_113702)
+- **NOVO-LAB_E4_T02** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_113715)
+- **NOVO-LAB_E4_T03** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_114144)
+- **NOVO-LAB_E4_T04** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_114419)
+- **NOVO-LAB_E4_T05** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_115010)
+- **NOVO-LAB_E4_T06** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_115334)
+- **NOVO-LAB_E4_T07** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_115649)
+- **NOVO-LAB_E4_T08** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_120032)
+- **NOVO-LAB_E4_T09** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_120600)
+- **NOVO-LAB_E4_T10** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_120923)
+- **NOVO-LAB_E4_T11** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_121227)
+- **NOVO-LAB_E4_T12** — [Assistir este teste](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_122154)
