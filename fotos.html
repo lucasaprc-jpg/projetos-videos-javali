@@ -43,8 +43,74 @@
   <ul class="photo-grid" id="gallery-list"></ul>
 
   <script>
-    const fotos = [
+    // 1. Injeta o arquivo de legendas diretamente no JavaScript
+    const legendasRaw = `
+NOVO-LAB_E9_A_F1.jpg \vert{}NOVO-LAB_E9_A_F1
+NOVO-LAB_E9_A_F2.jpg \vert{}NOVO-LAB_E9_A_F2
+NOVO-LAB_E9_A_F3.jpg \vert{}NOVO-LAB_E9_A_F3
+NOVO-LAB_E9_BAT_F1 (1).jpg \vert{}NOVO-LAB_E9_BAT_F1 (1)
+NOVO-LAB_E9_BAT_F2.jpg \vert{}NOVO-LAB_E9_BAT_F2
+NOVO-LAB_E9_CA_F1.jpg \vert{}NOVO-LAB_E9_CA_F1
+NOVO-LAB_E9_CA_F2.jpg \vert{}NOVO-LAB_E9_CA_F2
+NOVO-LAB_E9_CHAVEUNI_PF.jpg \vert{}NOVO-LAB_E9_CHAVEUNI_PF
+NOVO-LAB_E9_PINÇAS_PF.jpg \vert{}NOVO-LAB_E9_PINÇAS_PF
+NOVO-LAB_E9_PINÇAS_PI.jpg \vert{}NOVO-LAB_E9_PINÇAS_PI
+NOVO-LAB_E9_SA_F1.jpg \vert{}NOVO-LAB_E9_SA_F1
+NOVO-LAB_E9_SA_F2.jpg \vert{}NOVO-LAB_E9_SA_F2
+NOVO-LAB_E9_SA_F3.jpg \vert{}NOVO-LAB_E9_SA_F3
+NOVO-LAB_E9_SA_F4.jpg \vert{}NOVO-LAB_E9_SA_F4
+NOVO-LAB_E9__CHAVEUNI_PI.jpg \vert{}NOVO-LAB_E9__CHAVEUNI_PI
+    `;
+
+    // 3. Injeta apenas os nomes físicos reais dos arquivos
+    const arquivosRestritos = [
+      'NOVO-LAB_E9_A_F1.jpg',
+      'NOVO-LAB_E9_A_F2.jpg',
+      'NOVO-LAB_E9_A_F3.jpg',
+      'NOVO-LAB_E9_BAT_F1 (1).jpg',
+      'NOVO-LAB_E9_BAT_F2.jpg',
+      'NOVO-LAB_E9_CA_F1.jpg',
+      'NOVO-LAB_E9_CA_F2.jpg',
+      'NOVO-LAB_E9_CHAVEUNI_PF.jpg',
+      'NOVO-LAB_E9_PINÇAS_PF.jpg',
+      'NOVO-LAB_E9_PINÇAS_PI.jpg',
+      'NOVO-LAB_E9_SA_F1.jpg',
+      'NOVO-LAB_E9_SA_F2.jpg',
+      'NOVO-LAB_E9_SA_F3.jpg',
+      'NOVO-LAB_E9_SA_F4.jpg',
+      'NOVO-LAB_E9__CHAVEUNI_PI.jpg',
     ];
+
+    const fotos = [];
+    const mapLegendas = {};
+
+    // Javascript lê o texto (livre de bugs do terminal do Windows)
+    const linhas = legendasRaw.split('\n');
+    for (let i = 0; i < linhas.length; i++) {
+        let linha = linhas[i].trim();
+        // Usa o código ASCII do Pipe para fugir do bug de cópia do chat
+        if (linha.indexOf(String.fromCharCode(124)) !== -1) {
+            let partes = linha.split(String.fromCharCode(124));
+            let nomeBase = partes[0].trim().replace(/\.[^/.]+$/, "");
+            let titulo = partes[1].trim();
+            if (titulo) {
+                mapLegendas[nomeBase] = titulo;
+            }
+        }
+    }
+
+    // Cruza os arquivos reais com as legendas (codifica url para funcionar 'Ç' e espaços)
+    for (let i = 0; i < arquivosRestritos.length; i++) {
+        let arquivo = arquivosRestritos[i];
+        let id_tag = arquivo.replace(/\.[^/.]+$/, "");
+        let titulo = mapLegendas[id_tag] ? mapLegendas[id_tag] : id_tag;
+        
+        fotos.push({
+            id: id_tag,
+            file: encodeURI('./fotos/' + arquivo),
+            title: titulo
+        });
+    }
 
     const select = document.getElementById('photo-select');
     const list = document.getElementById('gallery-list');
@@ -68,34 +134,25 @@
 
         function trocarFoto(id) {
           let item = fotos.find(v => v.id === id);
-          if (!item) {
-              item = fotos[0];
-          }
-          if (!item) {
-              return;
-          }
+          if (!item) item = fotos[0];
+          if (!item) return;
 
           window.location.hash = item.id;
           select.value = item.id;
           title.textContent = item.title;
-          
-          viewer.src = encodeURI(item.file);
+          viewer.src = item.file;
           viewer.alt = item.title;
-          
           window.scrollTo({ top: 0, behavior: 'smooth' });
 
           document.querySelectorAll('.photo-card').forEach(el => el.classList.remove('active'));
           const activeCard = document.getElementById('card-' + item.id);
-          if (activeCard) {
-              activeCard.classList.add('active');
-          }
+          if (activeCard) activeCard.classList.add('active');
         }
 
         window.addEventListener('DOMContentLoaded', () => {
           let initialId = window.location.hash.replace('#', '');
           trocarFoto(initialId);
         });
-
         window.addEventListener('hashchange', () => {
           let hashId = window.location.hash.replace('#', '');
           trocarFoto(hashId);
