@@ -1,12 +1,13 @@
-# 🐗 Javali Module Video Projects
+# 🐗 Javali Module Test Records
 
-> 🌐 **Online Viewing:** Watch all recorded test videos directly in your browser using the link below:
+> 🌐 **Online Visualization:** Browse all tests and project media directly in your browser:
 > 
-> 👉 **[Click here to open the Video Gallery](https://lucasaprc-jpg.github.io/projetos-videos-javali/)**
+> 🎥 **[Open Video Gallery](https://lucasaprc-jpg.github.io/projetos-videos-javali/)**
+> 📸 **[Open Photo Gallery](https://lucasaprc-jpg.github.io/projetos-videos-javali/fotos.html)**
 
 ---
 
-## 📂 Available Video Files
+## 📂 Available Video Tests
 
 - **NOVO-LAB_E1_SA-ED_T01** — [Watch this test](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_091722)
 - **NOVO-LAB_E1_SA-DE_T02** — [Watch this test](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_092432)
@@ -42,50 +43,21 @@
 - **NOVO-LAB_E4_DE_T11** — [Watch this test](https://lucasaprc-jpg.github.io/projetos-videos-javali/#20251117_122154)
 
 ---
-## 📸 Project Photos
 
+## 📸 Available Photos
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<img src="./fotos/NOVO-LAB_E9_A_F1.jpg" alt="NOVO-LAB_E9_A_F1.jpg" width="800">
-<br><br>
-<img src="./fotos/NOVO-LAB_E9_A_F2.jpg" alt="NOVO-LAB_E9_A_F2.jpg" width="800">
-<br><br>
-<img src="./fotos/NOVO-LAB_E9_A_F3.jpg" alt="NOVO-LAB_E9_A_F3.jpg" width="800">
-<br><br>
-<img src="./fotos/NOVO-LAB_E9_BAT_F1 (1).jpg" alt="NOVO-LAB_E9_BAT_F1 (1).jpg" width="800">
-<br><br>
-<img src="./fotos/NOVO-LAB_E9_BAT_F2.jpg" alt="NOVO-LAB_E9_BAT_F2.jpg" width="800">
-<br><br>
-<img src="./fotos/NOVO-LAB_E9_CA_F1.jpg" alt="NOVO-LAB_E9_CA_F1.jpg" width="800">
-<br><br>
-<img src="./fotos/NOVO-LAB_E9_CA_F2.jpg" alt="NOVO-LAB_E9_CA_F2.jpg" width="800">
-<br><br>
-<img src="./fotos/NOVO-LAB_E9_CHAVEUNI_PF.jpg" alt="NOVO-LAB_E9_CHAVEUNI_PF.jpg" width="800">
-<br><br>
-<img src="./fotos/NOVO-LAB_E9_PINÇAS_PF.jpg" alt="NOVO-LAB_E9_PINÇAS_PF.jpg" width="800">
-<br><br>
-<img src="./fotos/NOVO-LAB_E9_PINÇAS_PI.jpg" alt="NOVO-LAB_E9_PINÇAS_PI.jpg" width="800">
-<br><br>
-<img src="./fotos/NOVO-LAB_E9_SA_F1.jpg" alt="NOVO-LAB_E9_SA_F1.jpg" width="800">
-<br><br>
-<img src="./fotos/NOVO-LAB_E9_SA_F2.jpg" alt="NOVO-LAB_E9_SA_F2.jpg" width="800">
-<br><br>
-<img src="./fotos/NOVO-LAB_E9_SA_F3.jpg" alt="NOVO-LAB_E9_SA_F3.jpg" width="800">
-<br><br>
-<img src="./fotos/NOVO-LAB_E9_SA_F4.jpg" alt="NOVO-LAB_E9_SA_F4.jpg" width="800">
-<br><br>
-<img src="./fotos/NOVO-LAB_E9__CHAVEUNI_PI.jpg" alt="NOVO-LAB_E9__CHAVEUNI_PI.jpg" width="800">
-<br><br>
+- **NOVO-LAB_E9_A_F1** — [View Photo](https://lucasaprc-jpg.github.io/projetos-videos-javali/fotos.html#NOVO-LAB_E9_A_F1)
+- **NOVO-LAB_E9_A_F2** — [View Photo](https://lucasaprc-jpg.github.io/projetos-videos-javali/fotos.html#NOVO-LAB_E9_A_F2)
+- **NOVO-LAB_E9_A_F3** — [View Photo](https://lucasaprc-jpg.github.io/projetos-videos-javali/fotos.html#NOVO-LAB_E9_A_F3)
+- **NOVO-LAB_E9_BAT_F1 (1)** — [View Photo](https://lucasaprc-jpg.github.io/projetos-videos-javali/fotos.html#NOVO-LAB_E9_BAT_F1 (1))
+- **NOVO-LAB_E9_BAT_F2** — [View Photo](https://lucasaprc-jpg.github.io/projetos-videos-javali/fotos.html#NOVO-LAB_E9_BAT_F2)
+- **NOVO-LAB_E9_CA_F1** — [View Photo](https://lucasaprc-jpg.github.io/projetos-videos-javali/fotos.html#NOVO-LAB_E9_CA_F1)
+- **NOVO-LAB_E9_CA_F2** — [View Photo](https://lucasaprc-jpg.github.io/projetos-videos-javali/fotos.html#NOVO-LAB_E9_CA_F2)
+- **NOVO-LAB_E9_CHAVEUNI_PF** — [View Photo](https://lucasaprc-jpg.github.io/projetos-videos-javali/fotos.html#NOVO-LAB_E9_CHAVEUNI_PF)
+- **NOVO-LAB_E9_PINÇAS_PF** — [View Photo](https://lucasaprc-jpg.github.io/projetos-videos-javali/fotos.html#NOVO-LAB_E9_PINÇAS_PF)
+- **NOVO-LAB_E9_PINÇAS_PI** — [View Photo](https://lucasaprc-jpg.github.io/projetos-videos-javali/fotos.html#NOVO-LAB_E9_PINÇAS_PI)
+- **NOVO-LAB_E9_SA_F1** — [View Photo](https://lucasaprc-jpg.github.io/projetos-videos-javali/fotos.html#NOVO-LAB_E9_SA_F1)
+- **NOVO-LAB_E9_SA_F2** — [View Photo](https://lucasaprc-jpg.github.io/projetos-videos-javali/fotos.html#NOVO-LAB_E9_SA_F2)
+- **NOVO-LAB_E9_SA_F3** — [View Photo](https://lucasaprc-jpg.github.io/projetos-videos-javali/fotos.html#NOVO-LAB_E9_SA_F3)
+- **NOVO-LAB_E9_SA_F4** — [View Photo](https://lucasaprc-jpg.github.io/projetos-videos-javali/fotos.html#NOVO-LAB_E9_SA_F4)
+- **NOVO-LAB_E9__CHAVEUNI_PI** — [View Photo](https://lucasaprc-jpg.github.io/projetos-videos-javali/fotos.html#NOVO-LAB_E9__CHAVEUNI_PI)

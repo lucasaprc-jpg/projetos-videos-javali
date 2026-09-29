@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria de Fotos - Módulo do Javali</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 960px; margin: 30px auto; padding: 0 20px; background: #0d1117; color: #c9d1d9; }
+    h1 { border-bottom: 1px solid #30363d; padding-bottom: 12px; font-size: 1.6rem; color: #f0f6fc; }
+    .nav { margin-bottom: 20px; font-size: 1.1rem; }
+    .nav a { color: #58a6ff; text-decoration: none; font-weight: 600; margin-right: 20px; padding: 8px 12px; background: #1f242c; border-radius: 6px; border: 1px solid #30363d; transition: 0.2s;}
+    .nav a:hover { background: #30363d; color: #fff; }
+    .viewer-container { background: #161b22; padding: 20px; border-radius: 8px; border: 1px solid #30363d; margin-bottom: 25px; text-align: center; }
+    #photo-title { color: #58a6ff; margin-top: 0; font-size: 1.25rem; text-align: left; margin-bottom: 15px;}
+    img#main-photo { max-width: 100%; border-radius: 6px; max-height: 70vh; object-fit: contain; }
+    .selector-box { margin-bottom: 15px; text-align: left; }
+    select { width: 100%; padding: 10px; background: #21262d; color: #c9d1d9; border: 1px solid #30363d; border-radius: 6px; font-size: 1rem; cursor: pointer; }
+    .photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; list-style: none; padding: 0; margin-top: 20px; }
+    .photo-card { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 14px; cursor: pointer; transition: 0.2s; }
+    .photo-card:hover, .photo-card.active { border-color: #58a6ff; background: #1f242c; }
+    .photo-card h4 { margin: 0; font-size: 0.95rem; color: #c9d1d9; font-weight: 500; }
+    .photo-card.active h4 { color: #58a6ff; }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <a href="index.html">🎥 Ir para Vídeos</a>
+    <a href="https://github.com/lucasaprc-jpg/projetos-videos-javali">📂 Voltar ao GitHub</a>
+  </div>
+  
+  <h1>📸 Galeria de Fotos - Módulo do Javali</h1>
+  
+  <div class="viewer-container">
+    <div class="selector-box">
+      <label for="photo-select" style="font-weight: 600; display: block; margin-bottom: 8px;">Selecione a imagem:</label>
+      <select id="photo-select" onchange="trocarFoto(this.value)"></select>
+    </div>
+    <h2 id="photo-title">Carregando...</h2>
+    <img id="main-photo" src="" alt="Foto">
+  </div>
+
+  <h2>Lista de Imagens</h2>
+  <ul class="photo-grid" id="gallery-list"></ul>
+
+  <script>
+    const fotos = [
+      { id: 'NOVO-LAB_E9_A_F1', file: 'fotos/NOVO-LAB_E9_A_F1.jpg vert{}NOVO-LAB_E9_A_F1', title: 'NOVO-LAB_E9_A_F1' },
+      { id: 'NOVO-LAB_E9_A_F2', file: 'fotos/NOVO-LAB_E9_A_F2.jpg vert{}NOVO-LAB_E9_A_F2', title: 'NOVO-LAB_E9_A_F2' },
+      { id: 'NOVO-LAB_E9_A_F3', file: 'fotos/NOVO-LAB_E9_A_F3.jpg vert{}NOVO-LAB_E9_A_F3', title: 'NOVO-LAB_E9_A_F3' },
+      { id: 'NOVO-LAB_E9_BAT_F1 (1)', file: 'fotos/NOVO-LAB_E9_BAT_F1 (1).jpg vert{}NOVO-LAB_E9_BAT_F1 (1)', title: 'NOVO-LAB_E9_BAT_F1 (1)' },
+      { id: 'NOVO-LAB_E9_BAT_F2', file: 'fotos/NOVO-LAB_E9_BAT_F2.jpg vert{}NOVO-LAB_E9_BAT_F2', title: 'NOVO-LAB_E9_BAT_F2' },
+      { id: 'NOVO-LAB_E9_CA_F1', file: 'fotos/NOVO-LAB_E9_CA_F1.jpg vert{}NOVO-LAB_E9_CA_F1', title: 'NOVO-LAB_E9_CA_F1' },
+      { id: 'NOVO-LAB_E9_CA_F2', file: 'fotos/NOVO-LAB_E9_CA_F2.jpg vert{}NOVO-LAB_E9_CA_F2', title: 'NOVO-LAB_E9_CA_F2' },
+      { id: 'NOVO-LAB_E9_CHAVEUNI_PF', file: 'fotos/NOVO-LAB_E9_CHAVEUNI_PF.jpg vert{}NOVO-LAB_E9_CHAVEUNI_PF', title: 'NOVO-LAB_E9_CHAVEUNI_PF' },
+      { id: 'NOVO-LAB_E9_PINÇAS_PF', file: 'fotos/NOVO-LAB_E9_PINÇAS_PF.jpg vert{}NOVO-LAB_E9_PINÇAS_PF', title: 'NOVO-LAB_E9_PINÇAS_PF' },
+      { id: 'NOVO-LAB_E9_PINÇAS_PI', file: 'fotos/NOVO-LAB_E9_PINÇAS_PI.jpg vert{}NOVO-LAB_E9_PINÇAS_PI', title: 'NOVO-LAB_E9_PINÇAS_PI' },
+      { id: 'NOVO-LAB_E9_SA_F1', file: 'fotos/NOVO-LAB_E9_SA_F1.jpg vert{}NOVO-LAB_E9_SA_F1', title: 'NOVO-LAB_E9_SA_F1' },
+      { id: 'NOVO-LAB_E9_SA_F2', file: 'fotos/NOVO-LAB_E9_SA_F2.jpg vert{}NOVO-LAB_E9_SA_F2', title: 'NOVO-LAB_E9_SA_F2' },
+      { id: 'NOVO-LAB_E9_SA_F3', file: 'fotos/NOVO-LAB_E9_SA_F3.jpg vert{}NOVO-LAB_E9_SA_F3', title: 'NOVO-LAB_E9_SA_F3' },
+      { id: 'NOVO-LAB_E9_SA_F4', file: 'fotos/NOVO-LAB_E9_SA_F4.jpg vert{}NOVO-LAB_E9_SA_F4', title: 'NOVO-LAB_E9_SA_F4' },
+      { id: 'NOVO-LAB_E9__CHAVEUNI_PI', file: 'fotos/NOVO-LAB_E9__CHAVEUNI_PI.jpg vert{}NOVO-LAB_E9__CHAVEUNI_PI', title: 'NOVO-LAB_E9__CHAVEUNI_PI' },
+    ];
+
+    const select = document.getElementById('photo-select');
+    const list = document.getElementById('gallery-list');
+    const viewer = document.getElementById('main-photo');
+    const title = document.getElementById('photo-title');
+
+    if(fotos.length > 0) {
+        fotos.forEach((item, index) => {
+          const opt = document.createElement('option');
+          opt.value = item.id;
+          opt.textContent = `${index + 1}. ${item.title}`;
+          select.appendChild(opt);
+
+          const li = document.createElement('li');
+          li.className = 'photo-card';
+          li.id = 'card-' + item.id;
+          li.onclick = () => trocarFoto(item.id);
+          li.innerHTML = `<h4>${index + 1}. ${item.title}</h4>`;
+          list.appendChild(li);
+        });
+
+        function trocarFoto(id) {
+          const item = fotos.find(v => v.id === id) || fotos[0];
+          if (!item) return;
+
+          window.location.hash = item.id;
+          select.value = item.id;
+          title.textContent = item.title;
+          viewer.src = item.file;
+          viewer.alt = item.title;
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+
+          document.querySelectorAll('.photo-card').forEach(el => el.classList.remove('active'));
+          const activeCard = document.getElementById('card-' + item.id);
+          if (activeCard) activeCard.classList.add('active');
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+          const initialId = window.location.hash.replace('#', '');
+          trocarFoto(initialId);
+        });
+
+        window.addEventListener('hashchange', () => {
+          const hashId = window.location.hash.replace('#', '');
+          trocarFoto(hashId);
+        });
+    } else {
+        title.textContent = "Erro: Nenhuma foto encontrada na pasta.";
+    }
+  </script>
+</body>
+</html>
