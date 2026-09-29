@@ -59,3 +59,33 @@
 
 
 
+<img src="./fotos/NOVO-LAB_E9_A_F1.jpg" alt="NOVO-LAB_E9_A_F1.jpg" width="800">
+<br><br>
+<img src="./fotos/NOVO-LAB_E9_A_F2.jpg" alt="NOVO-LAB_E9_A_F2.jpg" width="800">
+<br><br>
+<img src="./fotos/NOVO-LAB_E9_A_F3.jpg" alt="NOVO-LAB_E9_A_F3.jpg" width="800">
+<br><br>
+<img src="./fotos/NOVO-LAB_E9_BAT_F1 (1).jpg" alt="NOVO-LAB_E9_BAT_F1 (1).jpg" width="800">
+<br><br>
+<img src="./fotos/NOVO-LAB_E9_BAT_F2.jpg" alt="NOVO-LAB_E9_BAT_F2.jpg" width="800">
+<br><br>
+<img src="./fotos/NOVO-LAB_E9_CA_F1.jpg" alt="NOVO-LAB_E9_CA_F1.jpg" width="800">
+<br><br>
+<img src="./fotos/NOVO-LAB_E9_CA_F2.jpg" alt="NOVO-LAB_E9_CA_F2.jpg" width="800">
+<br><br>
+<img src="./fotos/NOVO-LAB_E9_CHAVEUNI_PF.jpg" alt="NOVO-LAB_E9_CHAVEUNI_PF.jpg" width="800">
+<br><br>
+<img src="./fotos/NOVO-LAB_E9_PINÇAS_PF.jpg" alt="NOVO-LAB_E9_PINÇAS_PF.jpg" width="800">
+<br><br>
+<img src="./fotos/NOVO-LAB_E9_PINÇAS_PI.jpg" alt="NOVO-LAB_E9_PINÇAS_PI.jpg" width="800">
+<br><br>
+<img src="./fotos/NOVO-LAB_E9_SA_F1.jpg" alt="NOVO-LAB_E9_SA_F1.jpg" width="800">
+<br><br>
+<img src="./fotos/NOVO-LAB_E9_SA_F2.jpg" alt="NOVO-LAB_E9_SA_F2.jpg" width="800">
+<br><br>
+<img src="./fotos/NOVO-LAB_E9_SA_F3.jpg" alt="NOVO-LAB_E9_SA_F3.jpg" width="800">
+<br><br>
+<img src="./fotos/NOVO-LAB_E9_SA_F4.jpg" alt="NOVO-LAB_E9_SA_F4.jpg" width="800">
+<br><br>
+<img src="./fotos/NOVO-LAB_E9__CHAVEUNI_PI.jpg" alt="NOVO-LAB_E9__CHAVEUNI_PI.jpg" width="800">
+<br><br>
