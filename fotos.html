@@ -51,7 +51,7 @@
     const viewer = document.getElementById('main-photo');
     const title = document.getElementById('photo-title');
 
-    if(fotos.length > 0) {
+    if (fotos.length > 0) {
         fotos.forEach((item, index) => {
           const opt = document.createElement('option');
           opt.value = item.id;
@@ -67,14 +67,18 @@
         });
 
         function trocarFoto(id) {
-          const item = fotos.find(v => v.id === id) || fotos[0];
-          if (!item) return;
+          let item = fotos.find(v => v.id === id);
+          if (!item) {
+              item = fotos[0];
+          }
+          if (!item) {
+              return;
+          }
 
           window.location.hash = item.id;
           select.value = item.id;
           title.textContent = item.title;
           
-          // O encodeURI traduz o Ç, o espaço e os parênteses para a web!
           viewer.src = encodeURI(item.file);
           viewer.alt = item.title;
           
@@ -82,16 +86,18 @@
 
           document.querySelectorAll('.photo-card').forEach(el => el.classList.remove('active'));
           const activeCard = document.getElementById('card-' + item.id);
-          if (activeCard) activeCard.classList.add('active');
+          if (activeCard) {
+              activeCard.classList.add('active');
+          }
         }
 
         window.addEventListener('DOMContentLoaded', () => {
-          const initialId = window.location.hash.replace('#', '');
+          let initialId = window.location.hash.replace('#', '');
           trocarFoto(initialId);
         });
 
         window.addEventListener('hashchange', () => {
-          const hashId = window.location.hash.replace('#', '');
+          let hashId = window.location.hash.replace('#', '');
           trocarFoto(hashId);
         });
     } else {
