@@ -68,8 +68,8 @@
 
         function trocarVideo(id) {
           let item = videos.find(v => v.id === id);
-          if (!item) item = videos[0];
-          if (!item) return;
+          if (!item) { item = videos[0]; }
+          if (!item) { return; }
 
           window.location.hash = item.id;
           select.value = item.id;
@@ -80,7 +80,7 @@
 
           document.querySelectorAll('.video-card').forEach(el => el.classList.remove('active'));
           const activeCard = document.getElementById('card-' + item.id);
-          if (activeCard) activeCard.classList.add('active');
+          if (activeCard) { activeCard.classList.add('active'); }
         }
 
         window.addEventListener('DOMContentLoaded', () => {
